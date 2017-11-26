@@ -1,0 +1,19 @@
+.user-container{
+    width: 100%;
+    font-size: 14px;
+}
+.user-wrp {
+    margin: 20px 0 50px;
+}
+.user-name {
+    font-size: 24px;
+}
+.comments-header, .post-header {
+    margin-bottom: 20px;
+}
+.comment, .post {
+    padding: 5px 10px;
+}
+.posts-container {
+    margin: 50px 0;
+}

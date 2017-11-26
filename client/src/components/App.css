@@ -1,0 +1,20 @@
+.post {
+  margin: 10px;
+  width: 50%;
+  padding: 5px;
+}
+
+.post-title { font-size: 20px; }
+
+.post-content {
+  padding: 10px;
+  min-height: 100px;
+}
+
+.post-author {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  cursor: pointer;
+  color: cornflowerblue;
+}
