@@ -14,6 +14,7 @@
     "inlineSourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "sourceMap": true,
     "lib": ["es6", "esnext"]
   },
   "include": ["src"]

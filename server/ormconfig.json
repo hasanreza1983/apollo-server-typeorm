@@ -1,7 +1,12 @@
 {
-    "type": "sqlite",
-    "database": "./data.db",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "postgres",
+    "database": "test",
     "synchronize": true,
+    "logging": ["query", "error"],
     "entities": [
       "src/entity/*.ts"
     ],

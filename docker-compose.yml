@@ -1,0 +1,49 @@
+version: '3'
+
+volumes:
+  data: {}
+
+services:
+
+  client:
+    build:
+      context: ./client/
+      dockerfile: ./client/Dockerfile
+    depends_on:
+      - server
+    volumes:
+      - ./client:/app
+    environment:
+      - POSTGRES_USER=postgres
+      - USE_DOCKER=yes
+    ports:
+      - "3000:3000"
+    restart: always
+
+  server:
+    build:
+      context: ./server/
+      dockerfile: ./server/Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - ./server:/app
+    environment:
+      - POSTGRES_USER=postgres
+      - USE_DOCKER=yes
+    ports:
+      - "3000:3000"
+    restart: always
+
+  db:
+    image: postgres
+    volumes:
+      - data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "test"
+    ports:
+      - "5432:5432"
+    expose: 
+      - "5432"
