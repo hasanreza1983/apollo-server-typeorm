@@ -26,8 +26,8 @@ type Product {
 # the schema allows the following query:
 type Query {
   users: [User]
-  customers: [Customer]
-  products: [Product]
+  customers(limit: Int): [Customer]
+  products(limit: Int): [Product]
   transactions(limit: Int): [Transaction]
 }
 `;

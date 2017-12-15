@@ -13,8 +13,8 @@ export class Transaction {
   @Column() timestamp: string
 
   @ManyToOne(type => Product, product => product.transactions)
-  product: Product
+  product: Promise<Product>
 
   @ManyToOne(type => Customer, customer => customer.transactions)
-  customer: Customer
+  customer: Promise<Customer>
 }

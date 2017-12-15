@@ -6,5 +6,5 @@ export class Product {
   @PrimaryGeneratedColumn() id: number
 
   @OneToMany(type => Transaction, transaction => transaction.product)
-  transactions: Transaction[]
+  transactions: Promise<Transaction[]>
 }
