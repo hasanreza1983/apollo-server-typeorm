@@ -13,6 +13,12 @@ type Transaction {
   customer: Customer
 }
 
+type TransactionAggregate {
+  amount: Int!
+  customer: Customer
+  product: Product
+}
+
 type Customer {
   id: Int!
   transactions: [Transaction]
@@ -28,6 +34,7 @@ type Query {
   users: [User]
   customers(limit: Int): [Customer]
   products(limit: Int): [Product]
-  transactions(limit: Int): [Transaction]
+  transactions(limit: Int, customerId: Int, productId: Int): [Transaction]
+  transactionAggregate(customerId: Int, productId: Int): [TransactionAggregate]
 }
 `;
